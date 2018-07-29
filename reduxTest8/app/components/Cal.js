@@ -4,6 +4,8 @@ import {View,Button,Text,TextInput} from 'react-native';
 
 export default class Cal extends Component{
 
+   
+
     render()
     {   
         console.log('cvalue'+this.props.c);
