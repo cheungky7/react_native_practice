@@ -1,21 +1,27 @@
-import React ,{ Component } from 'react';
+import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ListItem from './ListItem';
 
 class Feed extends Component {
-    static navigationOptions=() => (
-        {
-            title: 'My Feed'
-        }
-    )
+    static navigationOptions=({ navigationOptions }) => {
+        return {
+           // title: 'My Feed',
+            title: navigationOptions.title,
+            headerStyle: {
+
+               
+               backgroundColor: navigationOptions.headerStyle.backgroundColor,
+             // backgroundColor: 'rgb(255,0,0)',
+            }
+        };
+    }
 
     renderItems=() => {
-
         return ['one', 'three', 'five'].map((item, i) =>{
             return (
                
                 <ListItem 
-                          key= {item}
+                          key={item}
                           text={`Im item ${item}`}
                           style={{ padding: 10, backgroundColor: `rgb(${i * 20}, ${(i + 1) * 50}, ${(i + 2) * 30})` }}
                           onPress={() => {

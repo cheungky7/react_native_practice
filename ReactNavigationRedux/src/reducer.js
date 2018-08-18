@@ -9,6 +9,13 @@ export const AppNavigator = createStackNavigator(
         ItemDetail: { screen: ItemDetail },
     }, {
         initialRouteName: 'Feed',
+
+        navigationOptions: {
+            title: 'Testing',
+            headerStyle: {
+                backgroundColor: 'rgb(255, 0, 0)'
+            },
+        } 
     }
 )
 
